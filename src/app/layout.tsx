@@ -1,8 +1,35 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
+
+import {
+  Poppins as fontPoppins,
+  Montserrat as fontMontserrat
+} from '@next/font/google';
+
+
 const inter = Inter({ subsets: ["latin"] });
+const roboto_gas = Roboto({
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const poppins = fontPoppins({
+    weight: ['400', '700'],
+    style: ['normal', 'italic'],
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-poppins',
+});
+
+const montserrat = fontMontserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className} style={{left: "0px", right: "0px", top : "0px", position: "absolute",bottom: "0px"}}>{children}</body>
     </html>
   );
 }
